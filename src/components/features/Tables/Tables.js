@@ -3,18 +3,17 @@ import { useSelector } from "react-redux";
 import { getAllTables } from "../../../redux/tableRedux";
 import TableShortcut from "../TableShortcut/TableShortcut";
 
-const Tables = () => {
+const Tables = ({ pending }) => {
   const tables = useSelector((state) => getAllTables(state));
+  console.log(pending);
   return (
-    <Row lg={1}>
-      {tables.map((table) => (
-        <TableShortcut
-          key={table.id}
-          id={table.id}
-          status={table.status}
-        />
-      ))}
-    </Row>
+    <section>
+      <Row lg={1}>
+        {tables.map((table) => (
+          <TableShortcut key={table.id} id={table.id} status={table.status} />
+        ))}
+      </Row>
+    </section>
   );
 };
 

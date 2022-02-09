@@ -4,10 +4,10 @@ import styles from "../HomePage/HomePage.module.scss";
 
 const HomePage = () => {
   return (
-   <Container>
-       <h1 className={styles.title}>All tables</h1>
-       <Tables />
-  </Container>
+    <Container>
+      <h1 className={styles.title}>All tables</h1>
+      <Tables />
+    </Container>
   );
 };
 
