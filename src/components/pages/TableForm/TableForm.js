@@ -1,9 +1,7 @@
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getAllStatuses } from "../../../redux/tableRedux";
 import styles from "./TableForm.module.scss";
 
 const TableForm = ({ action, actionText, ...props }) => {
@@ -14,7 +12,12 @@ const TableForm = ({ action, actionText, ...props }) => {
   );
   const [bill, setBill] = useState(status === "Busy" ? 0 : props.bill);
 
-  const statuses = useSelector((state) => getAllStatuses(state));
+  const statuses = [
+    { id: 1, value: "Free" },
+    { id: 2, value: "Busy" },
+    { id: 3, value: "Reserved" },
+    { id: 4, value: "Cleaning" },
+  ];
 
   const navigate = useNavigate();
 
@@ -68,7 +71,7 @@ const TableForm = ({ action, actionText, ...props }) => {
           controlId="formBasicEmail"
         >
           <Form.Label className={clsx("col-4", styles.label)}>
-            Status:{" "}
+            Status:
           </Form.Label>
           <Form.Control
             as="select"

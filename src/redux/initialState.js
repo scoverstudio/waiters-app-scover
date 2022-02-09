@@ -22,12 +22,6 @@ const initialState = {
       bill: 100,
     },
   ],
-  statuses: [
-    { id: 1, value: "Free" },
-    { id: 2, value: "Busy" },
-    { id: 3, value: "Reserved" },
-    { id: 4, value: "Cleaning" },
-  ],
 };
 
 export default initialState;
