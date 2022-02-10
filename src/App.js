@@ -15,7 +15,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/api/tables/:id" element={<EditTable />} />
+        <Route path="/api/table/:id" element={<EditTable />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
     </Container>
