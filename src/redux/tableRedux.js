@@ -4,7 +4,7 @@ import { API_URL } from "../config";
 export const getAllTables = (state) => state.tables;
 export const getAllStatuses = (state) => state.statuses;
 export const getTablesById = (state, id) =>
-  state.tables.find((table) => table.id == id);
+  state.tables.find((table) => table.id === id);
 
 //actions
 const createActionName = (actionName) => `app/tables/${actionName}`;
@@ -23,7 +23,7 @@ export const updateTables = (payload) => ({
 
 export const fetchTables = () => {
   return (dispatch) => {
-    fetch("http://localhost:3131/tables")
+    fetch(`${API_URL}/tables`)
       .then((res) => res.json())
       .then((tables) => dispatch(updateTables(tables)));
   };
@@ -33,7 +33,7 @@ const tableReducer = (statePart = [], action) => {
   switch (action.type) {
     case EDIT_TABLE:
       return statePart.map((table) =>
-        table.id == action.payload.id ? { ...table, ...action.payload } : table
+        table.id === action.payload.id ? { ...table, ...action.payload } : table
       );
     case UPDATE_TABLES:
       return [...action.payload];

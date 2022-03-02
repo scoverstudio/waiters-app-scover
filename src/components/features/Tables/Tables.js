@@ -3,9 +3,8 @@ import { useSelector } from "react-redux";
 import { getAllTables } from "../../../redux/tableRedux";
 import TableShortcut from "../TableShortcut/TableShortcut";
 
-const Tables = ({ pending }) => {
+const Tables = () => {
   const tables = useSelector((state) => getAllTables(state));
-  console.log(pending);
   return (
     <section>
       <Row lg={1}>

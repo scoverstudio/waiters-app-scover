@@ -11,7 +11,7 @@ const TableShortcut = ({ id, status}) => {
           <span className={styles.status}>Status:</span> {status}
         </p>
       </div>
-      <Link to={"/api/table/" + id}>
+      <Link to={"/table/" + id}>
         <Button>Show more</Button>
       </Link>
     </Container>
